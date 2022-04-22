@@ -10,8 +10,7 @@ Boolean rectON=false, ellipseON=false;
 String buttonText1= "Click Me";
 String buttonText2= "Or Me";
 PFont buttonFont;
-color purple = #2C08FF; //Note Night Mode Friendly, all of the blue is included
-
+color purple = #2C08FF; 
 //
 void setup(){
   //Display Geometry 
@@ -21,20 +20,19 @@ void setup(){
   int appWidth = width;//displayWidth
   int appHeight = height;// displayHeight
   //with strings easier to print to console or canvas
-  String ls= "landscape or Square", p= "portrait", DO= "DisplayOrientation",instruct= "bru tun you phone";
-  String orientation = (appWidth >= appHeight ) ? ls : p ;//ternery Operator 
-  
-  println(DO,orientation);
-   if (orientation==ls) { 
-   println("good to go");} else {println(instruct);
-  println("App Geometry is :",appWidth,appHeight);
-}else {//Break our app if not landscape
-println(instruct);
-appWidth = appWidth*0;
-appHeight = appHeight*0
-}
-println ("A[[ Geometry is :", "\tApp Width:", appWidth,"t
-  //
+   String ls="Landscape or Square", p="portrait", DO="Display Orientation:", instruct="Bru, turn your phun";
+  String orientation = ( appWidth >= appHeight ) ? ls : p ; //Ternary Operator, repeats IF-ELSE to populate var
+  println ( DO, orientation );
+  //if ( orientation==p ) println(instruct); //Testing the orientation variable
+  if (orientation==ls) {
+    println("Good to Go");
+  } else { //Break our app if not landscape
+    println(instruct);
+    appWidth = appWidth*0;
+    appHeight = appHeight*0;
+  } 
+  println("App Geometry is:", "\tApp Width:", appWidth, "\t\tApp Height:", appHeight);
+   //
  //population 
  buttonX1 = appWidth*1/4;
    buttonY1 = appHeight*3/4;
@@ -58,16 +56,18 @@ println ("A[[ Geometry is :", "\tApp Width:", appWidth,"t
    y = ellipseRectYCenter;
    xDiameter = ellipseXDiameter;
    yDiameter = ellipseYDiameter;
-
+  buttonFont = createFont ("Harrington", 55); 
 }//End setup
 
 //
 void draw(){
+   background(black); 
  rect(buttonX1, buttonY1, buttonWidth1,buttonHeight1);//calender 
 rect(buttonX2, buttonY2, buttonWidth2,buttonHeight2);//weather
- rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
+ //rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
+   if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
   //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
- f (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
+ if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
   //
   //Text Draw, General Code for any text
   //Note: visualization rectangle is in main program
