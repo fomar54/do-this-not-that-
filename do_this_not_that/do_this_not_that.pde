@@ -15,48 +15,10 @@ color purple = #2C08FF;
 void setup(){
   //Display Geometry 
   size (600,400);
-  println(width,height,displayWidth,displayHeight); 
-  //swap display key variables for testing 
-  int appWidth = width;//displayWidth
-  int appHeight = height;// displayHeight
-  //with strings easier to print to console or canvas
-   String ls="Landscape or Square", p="portrait", DO="Display Orientation:", instruct="Bru, turn your phun";
-  String orientation = ( appWidth >= appHeight ) ? ls : p ; //Ternary Operator, repeats IF-ELSE to populate var
-  println ( DO, orientation );
-  //if ( orientation==p ) println(instruct); //Testing the orientation variable
-  if (orientation==ls) {
-    println("Good to Go");
-  } else { //Break our app if not landscape
-    println(instruct);
-    appWidth = appWidth*0;
-    appHeight = appHeight*0;
-  } 
-  println("App Geometry is:", "\tApp Width:", appWidth, "\t\tApp Height:", appHeight);
-   //
+  displayOrientation();
+  //
+  population();
  //population 
- buttonX1 = appWidth*1/4;
-   buttonY1 = appHeight*3/4;
-   buttonWidth1 = appWidth*1/5;
-   buttonHeight1 = appHeight*1/5;
-   buttonX2 = appWidth*3/4;
-   buttonY2 = buttonY1;
-   buttonWidth2 = buttonWidth1;
-   buttonHeight2 = buttonHeight1;
-    rectDisplayX = appWidth*1/8;
-   rectDisplayY = appHeight*1/8;
-   rectDisplayWidth = buttonWidth1;
-   rectDisplayHeight = buttonWidth1;
-   ellipseX = appWidth*6/8;
-   ellipseY = rectDisplayY;
-   ellipseXDiameter = appWidth*1/8; //Note: formulae not "square" but same
-   ellipseYDiameter = appHeight*1/8;
-   float ellipseRectXCenter = ellipseX + ellipseXDiameter*1/2 ;
-   float ellipseRectYCenter = ellipseY + ellipseYDiameter*1/2 ;
-   x = ellipseRectXCenter;
-   y = ellipseRectYCenter;
-   xDiameter = ellipseXDiameter;
-   yDiameter = ellipseYDiameter;
-  buttonFont = createFont ("Harrington", 55); 
 }//End setup
 
 //
