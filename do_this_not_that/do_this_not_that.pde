@@ -12,7 +12,8 @@ String buttonText2= "Or Me";
 PFont buttonFont;
 color purple = #2C08FF; 
 //
-void setup(){
+void setup()
+{
   //Display Geometry 
   size (600,400);
   displayOrientation();
