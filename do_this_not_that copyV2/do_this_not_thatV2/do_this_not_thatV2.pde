@@ -33,10 +33,6 @@ void setup(){
     appHeight*=0;
   } 
   println("App Geometry is:", "\tApp Width:", appWidth, "\t\tApp Height:", appHeight);
-
-  
-  
-  
   
    buttonX1 = appWidth*1/4;
    buttonY1 = appHeight*3/4;
@@ -56,7 +52,7 @@ void setup(){
    y = ellipseRectYCenter;
    xDiameter = ellipseXDiameter;
    yDiameter = ellipseYDiameter;
-  buttonFont = createFont ("Harrington", 55); 
+  buttonFont = createFont ("AcademyEngravedLetPlain",55); 
 //
  println("Start of Console");
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
@@ -77,7 +73,6 @@ void draw(){
    if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
   //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
  if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
-
     text(buttonText1, buttonX1, buttonY1, buttonWidth1, buttonHeight1);
   fill(white);
   
@@ -85,10 +80,10 @@ void draw(){
 void keyPressed(){}//End keyPressed
 //
 void mousePressed(){
-rectON = false;
-  ellipseON = false;
+
+  println("before the button","/tRect",rectON,"/tElliipse",ellipseON);
    if ( mouseX>=buttonX1 && mouseX<=buttonX1+buttonWidth1 && mouseY>=buttonY1 && mouseY<=buttonY1+buttonHeight1 ) rectON = true;
- if( rectON=true) {
+ if( rectON==true) {
   rectON=false;
 ellipseON=true;}
   else {
@@ -96,5 +91,3 @@ ellipseON=true;}
 ellipseON=false;
 }
 }//End mousePressed
-
-//
